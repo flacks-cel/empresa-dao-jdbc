@@ -12,17 +12,19 @@ public class Funcionario implements Serializable{
 	private String email;
 	private Date inicio;
 	private Double salario;
+
+	private Cliente cliente;
 	
 	public Funcionario() {
 	}
 
-	public Funcionario(Integer id, String nome, String email, Date inicio, Double salario) {
-		super();
+	public Funcionario(Integer id, String nome, String email, Date inicio, Double salario, Cliente cliente) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.inicio = inicio;
 		this.salario = salario;
+		this.cliente = cliente;
 	}
 
 	public Integer getId() {
@@ -65,6 +67,18 @@ public class Funcionario implements Serializable{
 		this.salario = salario;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -93,7 +107,7 @@ public class Funcionario implements Serializable{
 	@Override
 	public String toString() {
 		return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email + ", inicio=" + inicio + ", salario="
-				+ salario + "]";
+				+ salario + ", cliente=" + cliente + "]";
 	}
 	
 
